@@ -58,8 +58,8 @@ scale_mat4 :: proc(v: v2) -> mat4 {
 //IDK
 multiply_mat4 :: proc(a, b: mat4) -> mat4{
 	result := create_mat4();
-	for i in 0..3 {
-		for j in 0..3 {
+	for i in 0..4 {
+		for j in 0..4 {
 			sum:f32 = 0.0;
 			for k in 0..3 {
 				sum += b.elements[i + k * 4] * a.elements[k + j * 4];

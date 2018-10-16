@@ -27,9 +27,10 @@ main :: proc()
 	if glfw.Init() == 0 do return;
 	defer glfw.Terminate();
 
-	dim := Window_Dim{1600, 900};
+	dim := Window_Dim{1280, 720};
 	window := glfw.CreateWindow(dim.x, dim.y, "Mythic Engine writen in Odin!", nil, nil);
 	if window == nil do return;
+    glfw.SetWindowAspectRatio(window, 16, 9);
 
     key_callback :: proc"c"(window: glfw.Window_Handle, key, scancode, action, mods: i32){
         keys[key] = action != glfw.RELEASE;
@@ -75,6 +76,9 @@ main :: proc()
         renderer.draw_sprite(&sprite);
         if keys[glfw.KEY_W] {
             sprite.transform.pos.y += 0.1 * delta;
+        }
+        if keys[glfw.KEY_S] {
+            sprite.transform.pos.y += -0.1 * delta;
         }
     	glfw.SwapBuffers(window);
 
