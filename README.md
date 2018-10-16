@@ -1,6 +1,6 @@
-* THIS IS MYTHIC(My Little Odin Game Framework)
+# THIS IS MYTHIC(My Little Odin Game Framework)
 
-** Features
+## Features
 Currently mythic can draw to a screen
 It has an ECS for game objects
 
@@ -8,7 +8,7 @@ Animation and Shadows for 2D coming soon
 
 Audio Coming soon
 
-** Dependencies
+## Dependencies
 odin-gl
 odin-glfw
 odin-stb
